@@ -1403,7 +1403,7 @@
     doubled2.forEach(src => {
       const div = document.createElement('div');
       div.className = 'gal-img';
-      div.innerHTML = `<img src="photos/${src}" alt="Galerie ordinace" loading="lazy" />`;
+      div.innerHTML = `<img src="${src}" alt="Galerie ordinace" loading="lazy" />`;
       track.appendChild(div);
     });
     if (photos.length < 4) track.style.animationDuration = '18s';
@@ -1411,7 +1411,7 @@
     ['photo_1.jpg', 'photo_2.jpg', 'photo_1.jpg', 'photo_2.jpg'].forEach(src => {
       const div = document.createElement('div');
       div.className = 'gal-img';
-      div.innerHTML = `<img src="photos/${src}" alt="Zubní ordinace" loading="lazy" />`;
+      div.innerHTML = `<img src="${src}" alt="Zubní ordinace" loading="lazy" />`;
       track.appendChild(div);
     });
   }
