@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zubní centrum MUDr. Jakuba Smrčka — Zubní ordinace v Praha 9</title>
-  <meta name="description" content="Péče o váš úsměv v komfortním prostředí." />
+  <meta name="description" content="Zubní ordinace, kde se nebojíte." />
   <meta name="theme-color" content="#f0fafa" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -794,7 +794,12 @@
       .onas-img { height: 300px; }
       .objednani-img { height: 230px; }
       .hero-actions { flex-direction: column; }
-      .hero-actions .btn { justify-content: center; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      section { padding: var(--space-6) 0; }
+      footer { padding: var(--space-6) 0 var(--space-3); }
+      .kontakt-map { height: 250px; }
+      .stat-num { font-size: 1.8rem; }
+      .card { padding: var(--space-3); }
     }
   </style>
 </head>
@@ -807,7 +812,7 @@
 <header id="header">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">🦷 <span>Zubní centrum MUDr. Jakuba Smrčka</span></a>
+      <a href="#" class="nav-logo">🦷 <span>Zubní centrum MUDr.</span></a>
       <nav aria-label="Hlavní navigace">
         <ul>
           <li><a href="#onas">O nás</a></li>
@@ -918,8 +923,8 @@
       <div class="onas-text" data-r>
         <div class="section-label">O nás</div>
         <h2>Vaše zubní ordinace v Praha 9</h2>
-        <p>Nabízíme kompletní zubní péči od prevence a čištění až po estetickou stomatologii a implantáty. Každého pacienta bereme individuálně a péči přizpůsobujeme jeho potřebám.</p>
-        <p class="section-desc">Péče o váš úsměv v komfortním prostředí.</p>
+        <p>Jsme moderní zubní ordinace s důrazem na komfort pacienta a nejnovější technologie. Naším cílem je, aby návštěva zubaře byla co nejpříjemnější. Věříme v preventivní přístup a dlouhodobou péči.</p>
+        <p class="section-desc">Zubní ordinace, kde se nebojíte.</p>
         <div class="onas-chips">
           <span class="chip">🦷 Bezbolestné ošetření</span>
           <span class="chip">✨ Moderní vybavení</span>
@@ -1281,7 +1286,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">🦷 <span>Zubní centrum MUDr. Jakuba Smrčka</span></div>
-        <p>Péče o váš úsměv v komfortním prostředí.<br>Poděbradská 489/116, Praha 9</p>
+        <p>Zubní ordinace, kde se nebojíte.<br>Poděbradská 489/116, Praha 9</p>
       </div>
       <div class="footer-col">
         <h4>Navigace</h4>
@@ -1411,7 +1416,7 @@
     ['photo_1.jpg', 'photo_2.jpg', 'photo_1.jpg', 'photo_2.jpg'].forEach(src => {
       const div = document.createElement('div');
       div.className = 'gal-img';
-      div.innerHTML = `<img src="${src}" alt="Zubní ordinace" loading="lazy" />`;
+      div.innerHTML = `<img src="photos/${src}" alt="Zubní ordinace" loading="lazy" />`;
       track.appendChild(div);
     });
   }
