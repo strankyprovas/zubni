@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zubní klinika Smile Factory — Zubní ordinace v Brno</title>
-  <meta name="description" content="Moderní stomatologie s přátelským přístupem." />
+  <meta name="description" content="Péče o váš úsměv v komfortním prostředí." />
   <meta name="theme-color" content="#f0fafa" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -794,7 +794,12 @@
       .onas-img { height: 300px; }
       .objednani-img { height: 230px; }
       .hero-actions { flex-direction: column; }
-      .hero-actions .btn { justify-content: center; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      section { padding: var(--space-6) 0; }
+      footer { padding: var(--space-6) 0 var(--space-3); }
+      .kontakt-map { height: 250px; }
+      .stat-num { font-size: 1.8rem; }
+      .card { padding: var(--space-3); }
     }
   </style>
 </head>
@@ -807,7 +812,7 @@
 <header id="header">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">🦷 <span>Zubní klinika Smile Factory</span></a>
+      <a href="#" class="nav-logo">🦷 <span>Zubní klinika Smile</span></a>
       <nav aria-label="Hlavní navigace">
         <ul>
           <li><a href="#onas">O nás</a></li>
@@ -842,10 +847,10 @@
       <div class="hero-text" data-r>
         <div class="hero-badge">Brno · Zubní ordinace</div>
         <h1 class="hero-title">
-          Kde se zubaře nebojíte<br>
+          Péče o váš úsměv<br>
           <em>Zubní klinika Smile Factory</em>
         </h1>
-        <p class="hero-sub">Preventivní i estetická stomatologie s důrazem na bezbolestnost.</p>
+        <p class="hero-sub">Zdravé zuby a krásný úsměv – to je náš cíl pro každého pacienta.</p>
         <div class="hero-actions">
           <a href="tel:607 027 707" class="btn btn--fill">📞 Objednat se</a>
           <a href="#sluzby" class="btn btn--outline">Naše služby ↓</a>
@@ -919,7 +924,7 @@
         <div class="section-label">O nás</div>
         <h2>Vaše zubní ordinace v Brně</h2>
         <p>V naší ordinaci dbáme na to, aby se každý pacient cítil bezpečně a pohodlně. Používáme moderní vybavení a šetrné metody léčby. Rádi vás přivítáme – i když jste u zubaře nervózní.</p>
-        <p class="section-desc">Moderní stomatologie s přátelským přístupem.</p>
+        <p class="section-desc">Péče o váš úsměv v komfortním prostředí.</p>
         <div class="onas-chips">
           <span class="chip">🦷 Bezbolestné ošetření</span>
           <span class="chip">✨ Moderní vybavení</span>
@@ -1281,7 +1286,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">🦷 <span>Zubní klinika Smile Factory</span></div>
-        <p>Moderní stomatologie s přátelským přístupem.<br>Jakubská 2, Brno</p>
+        <p>Péče o váš úsměv v komfortním prostředí.<br>Jakubská 2, Brno</p>
       </div>
       <div class="footer-col">
         <h4>Navigace</h4>
@@ -1411,7 +1416,7 @@
     ['photo_1.jpg', 'photo_2.jpg', 'photo_1.jpg', 'photo_2.jpg'].forEach(src => {
       const div = document.createElement('div');
       div.className = 'gal-img';
-      div.innerHTML = `<img src="${src}" alt="Zubní ordinace" loading="lazy" />`;
+      div.innerHTML = `<img src="photos/${src}" alt="Zubní ordinace" loading="lazy" />`;
       track.appendChild(div);
     });
   }
