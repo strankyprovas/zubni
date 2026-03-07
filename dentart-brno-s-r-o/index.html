@@ -794,7 +794,12 @@
       .onas-img { height: 300px; }
       .objednani-img { height: 230px; }
       .hero-actions { flex-direction: column; }
-      .hero-actions .btn { justify-content: center; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      section { padding: var(--space-6) 0; }
+      footer { padding: var(--space-6) 0 var(--space-3); }
+      .kontakt-map { height: 250px; }
+      .stat-num { font-size: 1.8rem; }
+      .card { padding: var(--space-3); }
     }
   </style>
 </head>
@@ -845,7 +850,7 @@
           Váš úsměv je naší prioritou<br>
           <em>DentArt Brno s.r.o.</em>
         </h1>
-        <p class="hero-sub">Zdravé zuby a krásný úsměv – to je náš cíl pro každého pacienta.</p>
+        <p class="hero-sub">Preventivní i estetická stomatologie s důrazem na bezbolestnost.</p>
         <div class="hero-actions">
           <a href="tel:773 086 548" class="btn btn--fill">📞 Objednat se</a>
           <a href="#sluzby" class="btn btn--outline">Naše služby ↓</a>
@@ -853,7 +858,7 @@
         <div class="hero-rating">
           <span class="stars">★★★★★</span>
           <strong>4.7 / 5</strong>
-          <span>· 63 hodnocení na Google</span>
+          <span>· 64 hodnocení na Google</span>
         </div>
       </div>
       <div class="hero-visual" data-r>
@@ -885,7 +890,7 @@
   <div class="container">
     <div class="stats-grid">
       <div data-r>
-        <div class="stat-num" data-count="63">0</div>
+        <div class="stat-num" data-count="64">0</div>
         <div class="stat-label">Spokojených pacientů</div>
       </div>
       <div data-r>
@@ -918,7 +923,7 @@
       <div class="onas-text" data-r>
         <div class="section-label">O nás</div>
         <h2>Vaše zubní ordinace v Brně</h2>
-        <p>Nabízíme kompletní zubní péči od prevence a čištění až po estetickou stomatologii a implantáty. Každého pacienta bereme individuálně a péči přizpůsobujeme jeho potřebám.</p>
+        <p>V naší ordinaci dbáme na to, aby se každý pacient cítil bezpečně a pohodlně. Používáme moderní vybavení a šetrné metody léčby. Rádi vás přivítáme – i když jste u zubaře nervózní.</p>
         <p class="section-desc">Moderní stomatologie s přátelským přístupem.</p>
         <div class="onas-chips">
           <span class="chip">🦷 Bezbolestné ošetření</span>
@@ -1157,7 +1162,7 @@
     <div class="recenze-header" data-r>
       <div class="section-label">Recenze</div>
       <h2>Co říkají naši pacienti</h2>
-      <p class="section-desc" style="margin: 0.5rem auto 0;">Hodnocení 4.7 / 5 na základě 63 recenzí na Google.</p>
+      <p class="section-desc" style="margin: 0.5rem auto 0;">Hodnocení 4.7 / 5 na základě 64 recenzí na Google.</p>
     </div>
     <div class="slider" data-r>
       <div class="slider-track" id="sliderTrack">
@@ -1251,7 +1256,7 @@
             <div class="kontakt-icon">✉️</div>
             <div class="kontakt-item-text">
               <small>Email</small>
-              <strong><a href="mailto:miketta@dentartbrno.cz">miketta@dentartbrno.cz</a></strong>
+              <strong><a href="mailto:mikettova@dentartbrno.cz">mikettova@dentartbrno.cz</a></strong>
             </div>
           </div>
           <div class="kontakt-item">
@@ -1297,7 +1302,7 @@
         <h4>Kontakt</h4>
         <ul>
           <li><a href="tel:773 086 548">773 086 548</a></li>
-          <li><a href="mailto:miketta@dentartbrno.cz">miketta@dentartbrno.cz</a></li>
+          <li><a href="mailto:mikettova@dentartbrno.cz">mikettova@dentartbrno.cz</a></li>
           <li>Kozí 705/5</li>
         </ul>
       </div>
@@ -1411,7 +1416,7 @@
     ['photo_1.jpg', 'photo_2.jpg', 'photo_1.jpg', 'photo_2.jpg'].forEach(src => {
       const div = document.createElement('div');
       div.className = 'gal-img';
-      div.innerHTML = `<img src="${src}" alt="Zubní ordinace" loading="lazy" />`;
+      div.innerHTML = `<img src="photos/${src}" alt="Zubní ordinace" loading="lazy" />`;
       track.appendChild(div);
     });
   }
