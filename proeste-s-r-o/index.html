@@ -179,7 +179,10 @@ section.block{padding:100px 0}
 
 footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
 .foot-grid{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1)}
-.foot-grid img{height:34px;filter:brightness(0) invert(1);opacity:.92}
+.foot-brand{display:flex;flex-direction:column;gap:2px}
+.foot-brand .fb-name{font-family:'Manrope';font-weight:800;font-size:1.55rem;letter-spacing:-.02em;color:#fff;line-height:1}
+.foot-brand .fb-name em{font-style:normal;color:var(--coral)}
+.foot-brand .fb-sub{font-size:.76rem;letter-spacing:.06em;color:rgba(255,255,255,.55);text-transform:uppercase}
 .foot-links{display:flex;gap:24px;flex-wrap:wrap}
 .foot-links a{font-weight:600;font-size:.9rem;color:rgba(255,255,255,.7)}
 .foot-links a:hover{color:var(--coral)}
@@ -490,7 +493,7 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <img src="img/proeste-logo.png" alt="PRO ESTE" />
+      <div class="foot-brand"><span class="fb-name">Pro<em>Este</em></span><span class="fb-sub">Dentální centrum</span></div>
       <nav class="foot-links">
         <a href="#onas">O nás</a><a href="#sluzby">Služby</a><a href="#tym">Tým</a>
         <a href="#galerie">Galerie</a><a href="#cenik">Ceník</a><a href="#kontakt">Kontakt</a>
