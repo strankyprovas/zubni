@@ -102,7 +102,7 @@ section.block{padding:100px 0}
 .sluzba p{font-size:.93rem;color:var(--muted);line-height:1.6}
 .sluzba .s-num{font-family:'Fraunces';font-size:.85rem;color:var(--coral-deep);font-weight:600;letter-spacing:.05em}
 
-.tym-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.tym-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .clen{text-align:center}
 .clen .c-photo{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/3.7;margin-bottom:18px;box-shadow:var(--shadow-sm);background:#eee}
 .clen .c-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.96);transition:transform .5s}
@@ -110,6 +110,23 @@ section.block{padding:100px 0}
 .clen .c-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(43,46,67,.18),transparent 45%)}
 .clen h3{font-size:1.12rem;color:var(--navy)}
 .clen .c-role{font-size:.86rem;color:var(--coral-deep);font-weight:700;margin-top:4px}
+/* lékaři & hygiena – medailonky s textem */
+.tym-lead{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:start;margin-bottom:46px}
+.lead-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+.lead-card .lc-photo{aspect-ratio:3/3.1;overflow:hidden;background:var(--coral-soft)}
+.lead-card .lc-photo img{width:100%;height:100%;object-fit:cover}
+.lead-card .lc-photo.ph{display:grid;place-items:center}
+.lead-card .lc-photo.ph span{font-family:'Fraunces';font-size:3.4rem;color:var(--coral-deep);font-weight:600}
+.lead-card .lc-body{padding:24px 24px 26px}
+.lead-card h3{font-size:1.18rem;color:var(--navy)}
+.lead-card .c-role{font-size:.84rem;color:var(--coral-deep);font-weight:700;margin:5px 0 14px}
+.lead-card p{font-size:.92rem;color:var(--muted);line-height:1.62;margin-bottom:12px}
+.lead-card .lc-meta{font-size:.8rem;color:var(--muted-2);line-height:1.55;border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+.lead-card .lc-meta b{color:var(--navy);font-weight:700}
+/* štíhlý výčet výkonů */
+.vykony-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:960px;margin:0 auto}
+.vykon{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-weight:600;color:var(--navy);font-size:.96rem;display:flex;gap:11px;align-items:center}
+.vykon::before{content:"";flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px var(--coral-soft)}
 
 #galerie{background:var(--paper)}
 .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -178,14 +195,14 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
 @media(max-width:980px){
   .hero-grid,.onas-grid,.cenik-wrap,.kont-grid{grid-template-columns:1fr;gap:40px}
   .sluzby-grid,.rec-grid{grid-template-columns:1fr 1fr}
-  .tym-grid{grid-template-columns:1fr 1fr}
+  .tym-grid,.tym-lead,.vykony-grid{grid-template-columns:1fr 1fr}
   .cenik-note{position:static}
   .hero-visual{max-width:440px;margin:0 auto}
 }
 @media(max-width:680px){
   .nav-links,.nav-phone{display:none}
   .hamburger{display:flex}
-  .sluzby-grid,.rec-grid,.tym-grid,.gal-grid{grid-template-columns:1fr}
+  .sluzby-grid,.rec-grid,.tym-grid,.tym-lead,.vykony-grid,.gal-grid{grid-template-columns:1fr}
   section.block{padding:70px 0}
   .hero-float{left:50%;transform:translateX(-50%);bottom:-26px}
   .mobile-menu.open{display:flex}
@@ -232,7 +249,7 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
       </div>
       <div class="hero-trust">
         <div><div class="t-num">ZDARMA</div><div class="t-lab">Vstupní vyšetření<br>i prohlídka</div></div>
-        <div><div class="t-num">4</div><div class="t-lab">Odborníci<br>v týmu</div></div>
+        <div><div class="t-num">6</div><div class="t-lab">Členů<br>v týmu</div></div>
         <div><div class="t-num">✓</div><div class="t-lab">Smlouvy<br>s pojišťovnami</div></div>
       </div>
     </div>
@@ -280,49 +297,19 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
       <h2>Naše služby</h2>
       <p>Komplexní stomatologická péče pod jednou střechou — od precizní diagnostiky po estetické ošetření.</p>
     </div>
-    <div class="sluzby-grid">
-      <article class="sluzba" data-r>
-        <div class="s-img"><img src="img/services-panoramaticky-rentgen.jpg" alt="Panoramatický rentgen" /></div>
-        <div class="s-body"><div class="s-num">01</div><h3>Panoramatický rentgen</h3>
-        <p>Dokonalá diagnostika je základ. Při vstupním vyšetření pořizujeme OPG snímek, z něhož stomatolog spolehlivě odhalí zubní kazy, záněty, cysty i fraktury kosti.</p></div>
-      </article>
-      <article class="sluzba" data-r>
-        <div class="s-img"><img src="img/services-stanoveni-lecebneho-planu.jpg" alt="Léčebný plán na míru" /></div>
-        <div class="s-body"><div class="s-num">02</div><h3>Léčebný plán na míru</h3>
-        <p>Na základě snímku a důkladného vyšetření vám sestavíme plán léčby. Probereme nutné zákroky i vaše časové a finanční možnosti, aby vás léčba co nejméně omezovala.</p></div>
-      </article>
-      <article class="sluzba" data-r>
-        <div class="s-img"><img src="img/services-dentalni-hygiena.jpg" alt="Dentální hygiena a Air Flow" /></div>
-        <div class="s-body"><div class="s-num">03</div><h3>Dentální hygiena + Air&nbsp;Flow</h3>
-        <p>Naše hygienistka vás naučí správně pečovat o zuby, dásně i mezizubní prostory, odstraní zubní kámen a plak. Pískování AIR FLOW navíc rozjasní chrup o několik odstínů.</p></div>
-      </article>
-      <article class="sluzba" data-r>
-        <div class="s-img"><img src="img/services-bile-plomby.jpg" alt="Bílé plomby" /></div>
-        <div class="s-body"><div class="s-num">04</div><h3>Bílé plomby</h3>
-        <p>Místo klasické amalgámové výplně zvolíte bílou. Moderní materiál je zcela bezpečný, odolný a esteticky k nerozeznání od původního tvaru zubu.</p></div>
-      </article>
-      <article class="sluzba" data-r>
-        <div class="s-img"><img src="img/services-korunky.jpg" alt="Keramické korunky" /></div>
-        <div class="s-body"><div class="s-num">05</div><h3>Keramické korunky</h3>
-        <p>Ani rozsáhlý kaz není neřešitelný. Tam, kde už nestačí plomba, použijeme celokeramickou či metalokeramickou korunku — vždy s ohledem na estetiku a dlouhou životnost.</p></div>
-      </article>
-      <article class="sluzba" data-r>
-        <div class="s-img"><img src="img/services-endodoncie.jpg" alt="Léčba zubních kanálků — endodoncie" /></div>
-        <div class="s-body"><div class="s-num">06</div><h3>Endodoncie</h3>
-        <p>Díky moderním metodám léčíme i rozsáhlé záněty. Zubní kanálky vyčistíme mechanicky i chemicky a uzavřeme speciální výplní, která zabrání šíření nákazy.</p></div>
-      </article>
-      <article class="sluzba" data-r>
-        <div class="s-img"><img src="img/services-mikroskop.jpg" alt="Ošetření pod mikroskopem" /></div>
-        <div class="s-body"><div class="s-num">07</div><h3>Ošetření pod mikroskopem</h3>
-        <p>Díky zvětšení vidíme detaily, které lze pouhým okem přehlédnout. Bílé plomby jsou k nerozeznání od zdravého zubu a úspěšnost ošetření kanálků je vyšší.</p></div>
-      </article>
-      <article class="sluzba" data-r style="display:flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;text-align:center">
-        <div class="s-body">
-          <h3 style="color:#fff">Nevíte si rady?</h3>
-          <p style="color:rgba(255,255,255,.8);margin-bottom:18px">Přijďte na vstupní vyšetření zdarma — vše vám vysvětlíme.</p>
-          <a href="#kontakt" class="btn btn-coral">Objednat se →</a>
-        </div>
-      </article>
+    <div class="vykony-grid">
+      <div class="vykon" data-r>Panoramatický rentgen (OPG)</div>
+      <div class="vykon" data-r>Stanovení léčebného plánu</div>
+      <div class="vykon" data-r>Dentální hygiena + Air&nbsp;Flow</div>
+      <div class="vykon" data-r>Bílé plomby</div>
+      <div class="vykon" data-r>Keramické korunky a&nbsp;můstky</div>
+      <div class="vykon" data-r>Endodoncie (kořenové kanálky)</div>
+      <div class="vykon" data-r>Ošetření pod mikroskopem</div>
+      <div class="vykon" data-r>Prevence a&nbsp;preventivní prohlídky</div>
+      <div class="vykon" data-r>Bělení zubů</div>
+    </div>
+    <div style="text-align:center;margin-top:34px" data-r>
+      <a href="#kontakt" class="btn btn-coral">Objednat se na vyšetření zdarma →</a>
     </div>
   </div>
 </section>
@@ -334,22 +321,46 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
       <h2>Náš tým</h2>
       <p>O váš úsměv se stará sehraný tým zkušených odborníků.</p>
     </div>
+    <div class="tym-lead">
+      <article class="lead-card" data-r>
+        <div class="lc-photo"><img src="img/team-stridecka.jpg" alt="MDDr. Radka Střídecká" /></div>
+        <div class="lc-body">
+          <h3>MDDr. Radka Střídecká</h3>
+          <div class="c-role">Zubní lékařka · majitelka</div>
+          <p>Zakladatelka dentálního centra PRO ESTE. Pacientům i&nbsp;celým rodinám se věnuje s&nbsp;důrazem na šetrné, bezbolestné ošetření a&nbsp;osobní přístup ke každému.</p>
+        </div>
+      </article>
+      <article class="lead-card" data-r>
+        <div class="lc-photo"><img src="img/team-osadnik.jpg" alt="MDDr. Jakub Osadník" /></div>
+        <div class="lc-body">
+          <h3>MDDr. Jakub Osadník</h3>
+          <div class="c-role">Zubní lékař</div>
+          <p>Zubní lékařství mě fascinuje propojením vědy, precizní řemeslné práce a&nbsp;každodenního kontaktu s&nbsp;lidmi. Důležitý je pro mě individuální přístup ke&nbsp;každému pacientovi — kvalitní ošetření s&nbsp;důrazem na prevenci a&nbsp;dentální hygienu. Mou snahou je přátelský přístup, aby se k&nbsp;nám pacienti vraceli bez obav a&nbsp;ošetření pro ně přestalo být strašákem.</p>
+          <div class="lc-meta"><b>Vzdělání:</b> LF Univerzity Palackého v&nbsp;Olomouci, obor zubní lékařství (promoce 2026); Mendelovo gymnázium Opava.<br><b>Praxe a&nbsp;stáže:</b> Banf Dentistry (Banff, Kanada) · Cenessto Brno · Dental Medicine Opava.</div>
+        </div>
+      </article>
+      <article class="lead-card" data-r>
+        <div class="lc-photo ph"><span>AK</span></div>
+        <div class="lc-body">
+          <h3>Andrea Kovaříková DiS.</h3>
+          <div class="c-role">Dentální hygienistka</div>
+          <p>Věřím, že krásný úsměv stojí především na zdravých zubech, dásních a&nbsp;tkáních, které je podporují — právě jejich zdraví je základem dlouhodobě funkčního a&nbsp;estetického chrupu. Zakládám si na individuálním přístupu, pečlivosti a&nbsp;příjemné atmosféře během ošetření.</p>
+          <div class="lc-meta"><b>Vzdělání:</b> SZŠ a&nbsp;VOŠ zdravotnická Brno, Diplomovaná dentální hygienistka (promoce 2023); SOŠ podnikání a&nbsp;obchodu, Prostějov.<br><b>Kurzy:</b> Guided Biofilm Therapy 2022.</div>
+        </div>
+      </article>
+    </div>
     <div class="tym-grid">
       <div class="clen" data-r>
-        <div class="c-photo"><img src="img/team-mddr-radka-stridecka_2023.jpg" alt="MDDr. Radka Střídecká" /></div>
-        <h3>MDDr. Radka Střídecká</h3><div class="c-role">Zubní lékařka, majitelka</div>
-      </div>
-      <div class="clen" data-r>
-        <div class="c-photo"><img src="img/team-perec.jpg" alt="MDDr. Nicolas Perec" /></div>
-        <h3>MDDr. Nicolas Perec</h3><div class="c-role">Zubní lékař</div>
-      </div>
-      <div class="clen" data-r>
-        <div class="c-photo"><img src="img/team-koudelkova.jpg" alt="Bc. Karolína Koudelková" /></div>
-        <h3>Bc. Karolína Koudelková</h3><div class="c-role">Dentální hygienistka</div>
-      </div>
-      <div class="clen" data-r>
-        <div class="c-photo"><img src="img/team-vykoukalova_2023.jpg" alt="Veronika Vykoukalová" /></div>
+        <div class="c-photo"><img src="img/team-vykoukalova.jpg" alt="Veronika Vykoukalová" /></div>
         <h3>Veronika Vykoukalová</h3><div class="c-role">Zubní instrumentářka</div>
+      </div>
+      <div class="clen" data-r>
+        <div class="c-photo"><img src="img/team-planickova.jpg" alt="Andrea Planičková" /></div>
+        <h3>Andrea Planičková</h3><div class="c-role">Zubní instrumentářka</div>
+      </div>
+      <div class="clen" data-r>
+        <div class="c-photo"><img src="img/team-ivana.jpg" alt="Ivana Střídecká" /></div>
+        <h3>Ivana Střídecká</h3><div class="c-role">Recepční</div>
       </div>
     </div>
   </div>
@@ -455,11 +466,11 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
         </div>
         <div class="hours">
           <div class="k-lab">Ordinační hodiny</div>
-          <div class="hour-row"><span>Pondělí</span><b>8:00 – 15:00</b></div>
-          <div class="hour-row"><span>Úterý</span><b>8:00 – 17:30</b></div>
-          <div class="hour-row"><span>Středa</span><b>8:00 – 17:30</b></div>
-          <div class="hour-row"><span>Čtvrtek</span><b>8:00 – 15:00</b></div>
-          <div class="hour-row"><span>Pátek</span><b>8:00 – 14:00</b></div>
+          <div class="hour-row"><span>Pondělí</span><b>7:30 – 14:30</b></div>
+          <div class="hour-row"><span>Úterý</span><b>7:30 – 17:30</b></div>
+          <div class="hour-row"><span>Středa</span><b>7:30 – 17:30</b></div>
+          <div class="hour-row"><span>Čtvrtek</span><b>7:30 – 17:30</b></div>
+          <div class="hour-row"><span>Pátek</span><b>7:30 – 14:00</b></div>
         </div>
       </div>
       <form class="kont-form" data-r onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Toto je ukázka — formulář se na ostrém webu odešle do ordinace.';">
