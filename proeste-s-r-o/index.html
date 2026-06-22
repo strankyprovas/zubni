@@ -153,6 +153,14 @@ section.block{padding:100px 0}
 .rec-card p{color:var(--ink);font-size:.98rem;font-style:italic;margin-bottom:18px;line-height:1.65}
 .rec-card .r-name{font-weight:800;color:var(--navy);font-size:.92rem}
 
+#aktuality{background:var(--paper)}
+.fb-wrap{display:flex;justify-content:center}
+.fb-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow-sm);width:100%;max-width:540px;overflow:hidden}
+.fb-card .fb-page,.fb-card .fb-page span,.fb-card iframe{width:100%!important}
+.fb-note{text-align:center;margin-top:18px;font-size:.92rem;color:var(--muted)}
+.fb-note a{color:var(--coral-deep);font-weight:700}
+.foot-links a.foot-fb{display:inline-flex;align-items:center;gap:7px}
+
 #kontakt{background:var(--navy);color:#fff}
 #kontakt .sec-head h2{color:#fff}
 #kontakt .sec-head p{color:rgba(255,255,255,.7)}
@@ -447,6 +455,34 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
   </div>
 </section>
 
+<section class="block" id="aktuality">
+  <div class="wrap">
+    <div class="sec-head center" data-r>
+      <span class="eyebrow">Sledujte nás</span>
+      <h2>Aktuality</h2>
+      <p>Co je u nás nového — novinky a informace rovnou z našeho Facebooku.</p>
+    </div>
+    <div class="fb-wrap" data-r>
+      <div class="fb-card">
+        <div class="fb-page"
+          data-href="https://www.facebook.com/klinikaproeste"
+          data-tabs="timeline"
+          data-width="500"
+          data-height="640"
+          data-small-header="false"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/klinikaproeste" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/klinikaproeste">ProEste – Dentální centrum na Facebooku</a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <p class="fb-note" data-r>Najdete nás i na Facebooku — <a href="https://www.facebook.com/klinikaproeste" target="_blank" rel="noopener">@klinikaproeste</a></p>
+  </div>
+</section>
+
 <section class="block" id="kontakt">
   <div class="wrap">
     <div class="sec-head" data-r>
@@ -497,7 +533,8 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
       <div class="foot-brand"><span class="fb-name">Pro<em>Este</em></span><span class="fb-sub">Dentální centrum</span></div>
       <nav class="foot-links">
         <a href="#onas">O nás</a><a href="#sluzby">Služby</a><a href="#tym">Tým</a>
-        <a href="#galerie">Galerie</a><a href="#cenik">Ceník</a><a href="#kontakt">Kontakt</a>
+        <a href="#galerie">Galerie</a><a href="#aktuality">Aktuality</a><a href="#cenik">Ceník</a><a href="#kontakt">Kontakt</a>
+        <a class="foot-fb" href="https://www.facebook.com/klinikaproeste" target="_blank" rel="noopener">Facebook</a>
       </nav>
     </div>
     <div class="foot-bottom">
@@ -508,6 +545,9 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
 </footer>
 
 <div class="lb" id="lb"><img src="" alt="" /></div>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v19.0"></script>
 
 <script>
 const hd=document.getElementById('header');
