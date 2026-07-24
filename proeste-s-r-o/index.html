@@ -539,16 +539,63 @@ footer{background:#23263a;color:rgba(255,255,255,.6);padding:50px 0 30px}
           <div class="hour-row"><span>Pátek</span><b>7:30 – 14:00</b></div>
         </div>
       </div>
-      <form class="kont-form" data-r onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Toto je ukázka — formulář se na ostrém webu odešle do ordinace.';">
+      <form class="kont-form" data-r id="kontaktForm">
         <h3>Napište nám</h3>
         <p class="fs">Ozveme se vám zpět co nejdříve.</p>
-        <div class="field"><label>Jméno a příjmení</label><input type="text" required placeholder="Vaše jméno" /></div>
-        <div class="field"><label>Telefon</label><input type="tel" required placeholder="+420…" /></div>
-        <div class="field"><label>E-mail</label><input type="email" placeholder="vas@email.cz" /></div>
-        <div class="field"><label>Zpráva</label><textarea placeholder="S čím vám můžeme pomoci?"></textarea></div>
+        <div class="field"><label>Jméno a příjmení</label><input type="text" name="name" required placeholder="Vaše jméno" /></div>
+        <div class="field"><label>Telefon</label><input type="tel" name="phone" required placeholder="+420…" /></div>
+        <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="vas@email.cz" /></div>
+        <div class="field"><label>Zpráva</label><textarea name="message" placeholder="S čím vám můžeme pomoci?"></textarea></div>
+        <!-- honeypot proti robotům: skryté pole, člověk ho nevyplní -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Odeslat poptávku</button>
         <div class="form-note"></div>
       </form>
+      <script>
+      (function () {
+        var f = document.getElementById('kontaktForm');
+        if (!f) return;
+        var note = f.querySelector('.form-note');
+        var btn  = f.querySelector('button[type="submit"]');
+        var btnText = btn ? btn.textContent : '';
+        // Na ukázkové adrese (strankyprovas.github.io) se nic reálně neodesílá.
+        var LIVE = /(^|\.)proeste\.cz$/i.test(location.hostname);
+        f.addEventListener('submit', function (e) {
+          e.preventDefault();
+          note.style.color = '';
+          if (!LIVE) {
+            note.textContent = 'Toto je ukázka — na ostrém webu se formulář odešle do ordinace.';
+            return;
+          }
+          note.textContent = 'Odesílám…';
+          if (btn) { btn.disabled = true; btn.textContent = 'Odesílám…'; }
+          fetch('https://strankyprovas.cz/form/proeste.php', {
+            method: 'POST',
+            body: new URLSearchParams(new FormData(f))
+          })
+            .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+            .then(function (d) {
+              if (d && d.ok) {
+                note.style.color = '#15803d';
+                note.textContent = 'Děkujeme, zprávu jsme přijali. Ozveme se vám co nejdříve.';
+                f.reset();
+              } else {
+                note.style.color = '#b91c1c';
+                note.textContent = (d && d.error)
+                  ? d.error
+                  : 'Zprávu se nepodařilo odeslat. Zavolejte nám prosím na +420 739 844 843.';
+              }
+            })
+            .catch(function () {
+              note.style.color = '#b91c1c';
+              note.textContent = 'Zprávu se nepodařilo odeslat. Zavolejte nám prosím na +420 739 844 843.';
+            })
+            .finally(function () {
+              if (btn) { btn.disabled = false; btn.textContent = btnText; }
+            });
+        });
+      })();
+      </script>
     </div>
   </div>
 </section>
